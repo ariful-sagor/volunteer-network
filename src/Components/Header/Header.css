@@ -1,0 +1,37 @@
+
+#logo{
+    width:150px;
+    margin-left: 20px;
+    margin-right: 200px;
+}
+.btn{
+    margin: 0px 20px;
+    width: 100px;
+
+}
+.link{
+    font-weight: bold;
+    margin:0px 20px;
+}
+.search{
+    text-align: center;
+    margin: 40px 0px;
+}
+#searchBar{
+    padding: 20px 0px;
+    justify-content: center;
+}
+.photo{
+    height: 300px;
+    padding:20px;
+}
+#task{
+    /* border: 1px solid white;
+    border-radius:10px; */
+    text-align: center;
+    
+}
+#task:hover{
+    box-shadow: 10px 10px 10px 10px grey;
+    border-radius:10px
+}

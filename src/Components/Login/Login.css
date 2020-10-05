@@ -1,0 +1,20 @@
+.google{
+
+    border: 1px solid black;
+    text-align: center;
+    display:flex;
+    flex-direction:row;
+    width:70%;
+    height:30%;
+    border-radius: 25px;
+    padding: 5px 5px;
+    margin:5px auto; 
+    align-items: center;
+    cursor: pointer;
+
+}
+ .google img{
+    width:10%;
+    height: 10%;
+    margin-right: 20px; 
+}
