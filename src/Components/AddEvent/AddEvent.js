@@ -9,7 +9,7 @@ const AddEvent = () => {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = data => {
-    fetch('http://localhost:7000/addTask', {
+    fetch('https://dry-dusk-16500.herokuapp.com/addTask', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -21,19 +21,21 @@ const AddEvent = () => {
   };
   return (
     <div className="container">
-                <img src={logo} id="logo" alt="logo" />
-                     <div class="Logo">
-                         <Link to="/list">
-                         <img src={volunteer}  alt="logo" />
-                         <h6>Volunteer resister list</h6>
-                         </Link>
-                     </div>
-                     <div class="Logo">
-                         <Link to='/addEvent'>
-                         <img src={add} alt="logo" />
-                         <h6>add event</h6>
-                         </Link>
-                     </div>
+      <Link to="/">
+        <img src={logo} id="logo" href='/header' alt="logo" />
+      </Link>
+            <div class="Logo">
+               <Link to="/list">
+               <img src={volunteer}  alt="logo" />
+               <h6>Volunteer resister list</h6>
+                </Link>
+             </div>
+             <div class="Logo">
+                <Link to='/addEvent'>
+                <img src={add} alt="logo" />
+                <h6>add event</h6>
+                </Link>
+              </div>
     <div className="row">
       <div className="col-md-12">
         <form onSubmit={handleSubmit(onSubmit)} className="wasValidated">

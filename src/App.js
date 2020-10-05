@@ -1,7 +1,6 @@
 import React, { createContext, useState } from 'react';
 import './App.css';
 import Header from './Components/Header/Header';
-import Event from './Components/Event/Event';
 
 import {
   BrowserRouter as Router,
@@ -15,6 +14,7 @@ import AddEvent from './Components/AddEvent/AddEvent';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import ListTask from './Components/Resister/ListTask'
 import Admins from './Components/Admin/Admins';
+import NotFound from './Components/NotFound/NotFound';
 
 export const UserContext= createContext();
 function App() {
@@ -26,9 +26,9 @@ function App() {
           <Route path="/home">
             <Header />
           </Route>
-          <Route path="/event">
+          {/* <Route path="/event">
             <Event />
-          </Route>
+          </Route> */}
           <Route path="/admin">
             <Admins />
           </Route>
@@ -50,7 +50,12 @@ function App() {
           <Route exact path="/">
             <Header />
           </Route>
+          <Route path="/*">
+            <NotFound />
+          </Route>
+
         </Switch>
+
     </Router>
     </UserContext.Provider>
   );

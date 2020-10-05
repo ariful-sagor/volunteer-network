@@ -4,17 +4,10 @@ import volunteer from '../../logos/users-alt 1.png';
 import add from '../../logos/plus 1.png';
 import { Link } from 'react-router-dom';
 import './List.css'
-import Admins from '../Admin/Admins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { Col } from 'react-bootstrap';
 const List = () => {
 
-  const deleteEvent = id => {
-    fetch(`http://localhost:7000/volunteer/${id}`)
-      .then(response => response.json())
-      .then(result => console.log(result));
-  }
 
   const [events, setEvents] = useState([]);
   useEffect(() => {
@@ -24,7 +17,6 @@ const List = () => {
         setEvents(result);
       })
   }, []);
-  console.log(events);
 
     return (
         <div className="container">
@@ -76,13 +68,13 @@ const List = () => {
                       <span className="text-black-50">{event.email}</span>
                         </div>
                         <div className="col-md">
-                        <span className="text-black-50">Registating date</span>
+                        <span className="text-black-50">{event.date}</span>
                         </div>
                         <div className="col-md">
                         <span className="text-black-50">{event.description}</span>
                         </div>
                         <div className="col-md">
-                        <span onClick={() => deleteEvent(event._id)} className="d-inline-block bg-danger rounded text-white-50 px-2 py-1 delete-btn">
+                        <span style={{cursor: 'pointer'}} className="d-inline-block bg-danger rounded text-white-50 px-2 py-1 delete-btn">
                           <FontAwesomeIcon icon={faTrash} />
                         </span>
                       </div>

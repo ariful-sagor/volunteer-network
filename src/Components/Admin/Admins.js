@@ -3,10 +3,8 @@ import logo from '../../logos/logo.png';
 import volunteer from '../../logos/users-alt 1.png';
 import add from '../../logos/plus 1.png';
 import { Link } from 'react-router-dom';
-const Admins = (props) => {
-    const events= props.event;
-    const { _id, name, email, description}= props.event;
-    console.log(props);
+const Admins = () => {
+
     return (
             <div className="container">
                 <img src={logo} id="logo" alt="logo" />

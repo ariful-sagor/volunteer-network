@@ -38,7 +38,9 @@ const Login = () => {
     return (
         <div>
             <div className="container" >
-            <img src={logo} id="logo" alt="logo" />
+            <Link to="/">
+                <img src={logo} id="logo" href='/header' alt="logo" />
+            </Link>
             <div id="login">
                 <Form >
                     <h3 style={{textAlign:"center"}}>Login With</h3>

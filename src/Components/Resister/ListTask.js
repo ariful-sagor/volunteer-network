@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Col, Form, FormControl, Nav, Navbar, Row } from 'react-bootstrap';
-import logo from '../../logos/logo.png';
+import {  Col, Navbar, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import logo from '../../logos/logo.png';
 const Header = () => {
     const [task, setTask]= useState([]);
     useEffect(()=>{
-        fetch('http://localhost:7000/volunteer')
+        fetch('https://dry-dusk-16500.herokuapp.com/volunteer')
         .then(res=> res.json())
         .then(data=>{
             setTask(data)
@@ -14,7 +14,9 @@ const Header = () => {
     return (
         <div className="container">
             <Navbar  expand="lg">
-                <img src={logo} id="logo" alt="logo" />
+            <Link to="/">
+                <img src={logo} id="logo" href='/header' alt="logo" />
+            </Link>
             </Navbar>
 
             <Row>
@@ -22,7 +24,6 @@ const Header = () => {
                 task.map(task =>                    
                         <Col sm={6} key={task.id}  id='task'>
                             <div>
-                                
                                 <img src={task.photo} alt="" className="photo" />
                                 <h3>{task.description}</h3>
                                 

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     const [task, setTask]= useState([]);
     useEffect(()=>{
-        fetch('http://localhost:7000/tasks')
+        fetch('https://dry-dusk-16500.herokuapp.com/tasks')
         .then(res=> res.json())
         .then(data=>{
             setTask(data)
@@ -15,7 +15,9 @@ const Header = () => {
     return (
         <div className="container">
             <Navbar  expand="lg">
-                <img src={logo} id="logo" alt="logo" />
+                <Link to="/">
+                    <img src={logo} id="logo" href='/header' alt="logo" />
+                </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
@@ -39,7 +41,7 @@ const Header = () => {
             <Row>
             {
                 task.map(task =>                    
-                        <Col sm={3} key={task.id}  id='task'>
+                        <Col sm={3} key={task._id}  id='task'>
                             <div>
                                 <Link to={"/register/"+ task.id} >
                                     <img src={task.photo} alt="" className="photo" />
