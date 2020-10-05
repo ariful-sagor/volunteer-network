@@ -19,8 +19,7 @@ const Admins = () => {
                          <img src={add} alt="logo" />
                          <h6>add event</h6>
                          </Link>
-                     </div>
-                     
+                     </div>               
         </div>
     )
 }

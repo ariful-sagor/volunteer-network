@@ -52,9 +52,6 @@ const Header = () => {
                         )
             }
             </Row>
-
-      
-   
         </div>
     );
 };
