@@ -1,4 +1,4 @@
-A full-stack app where you can pick the date and fix tasks with other volunteers. One can see other picked tasks.
+A full-stack app where you can pick the date and fix tasks with other volunteers. One can see other volunteer's picked tasks.
 
 Features:
 - Can Apply for volunteering tasks.
