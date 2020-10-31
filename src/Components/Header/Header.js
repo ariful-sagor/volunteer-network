@@ -6,12 +6,17 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     const [task, setTask]= useState([]);
     useEffect(()=>{
-        fetch('https://dry-dusk-16500.herokuapp.com/tasks')
+        fetch('https://dry-dusk-16500.herokuapp.com/tasks?search='+search)
         .then(res=> res.json())
         .then(data=>{
             setTask(data)
         })
     })
+    const [search,setSearch]= useState('');
+    const handleBlur= event => {
+        setSearch(event.target.value)
+        console.log(search)
+    }
     return (
         <div className="container">
             <Navbar  expand="lg">
@@ -34,7 +39,8 @@ const Header = () => {
             <h3 className="search">Grow By Helping People In Need</h3>
 
             <Form inline id="searchBar">
-                <FormControl type="text" placeholder="Search"/>
+                {/* <FormControl type="text" onBlur={handleBlur} placeholder="Search"/> */}
+                <input type="text" onChange={handleBlur} style={{width:'200px', height:'40px',borderRadius:'5px'}} placeholder="Search"/>
                 <Button variant="primary">Search</Button>
             </Form>
 

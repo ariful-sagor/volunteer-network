@@ -11,7 +11,7 @@ const List = () => {
 
   const [events, setEvents] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:7000/volunteer')
+    fetch('https://dry-dusk-16500.herokuapp.com/volunteer')
       .then(response => response.json())
       .then(result => {
         setEvents(result);

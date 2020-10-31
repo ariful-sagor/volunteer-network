@@ -22,7 +22,7 @@ const Header = () => {
             <Row>
             {
                 task.map(task =>                    
-                        <Col sm={6} key={task.id}  id='task'>
+                        <Col md={6} key={task.id}  id='task'>
                             <div>
                                 <img src={task.photo} alt="" className="photo" />
                                 <h3>{task.description}</h3>
